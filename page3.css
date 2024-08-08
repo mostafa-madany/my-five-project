@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*  */
+
+/* button {
+  background-color: #98AA28 !important;
+} */
+
+.header-content p:first-of-type {
+  position: relative;
+  
+}
+.header-content p:first-of-type:before {
+
+  content: "";
+  width: 50px;
+  position: absolute;
+  left: -100%;
+  top: 50%;
+  border: 1px solid #eee;
+}
+
+.header-content p:first-of-type:after {
+
+  content: "";
+  width: 50px;
+  position: absolute;
+  left: 120%;
+  top: 50%;
+  border: 1px solid #eee;
+}
+
+@media (max-width:500px) {
+  .header-content p:last-of-type {
+   width: 100% !important;
+   
+  }
+}
+
+.col-lg-2 img {
+  margin: 15px 0px;
+}
+
+

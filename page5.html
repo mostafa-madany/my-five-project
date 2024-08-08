@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    /> -->
+    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
+    <link
+      rel="stylesheet"
+      href="./assets/bootstrap-5.3.3-dist/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="./assets/bootstrap-5.3.3-dist/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <script src="./trello.js" defer></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      #map {
+        height: 100%;
+      }
+      body {
+        background-color: rgb(126, 184, 162);
+        font-family: "Poppins", sans-serif;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      form {
+        width: 60%;
+        margin: 4rem auto;
+        text-align: center;
+      }
+
+      .container > div {
+        width: 23%;
+        background-color: #fff;
+        text-align: center;
+      }
+
+      .container > div h2 {
+        padding: 20px;
+      }
+
+      .inProgress h2 {
+        background: orange;
+      }
+
+      .onHold h2 {
+        background: red;
+      }
+
+      .review h2 {
+        background: yellow;
+      }
+
+      .approved h2 {
+        background: green;
+      }
+
+      div {
+        /* min-height: 250px; */
+        list-style: none;
+      }
+
+      p {
+        padding: 20px;
+        border: 1px solid grey;
+      }
+
+      input[type="text"] {
+        padding: 10px 20px;
+        width: 55%;
+      }
+
+      button {
+        padding: 10px 20px;
+        color: #000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- start nav -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary h-50">
+      <div class="container-fluid d-flex">
+        <a class="navbar-brand" href="#">Glozzom</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Page1.html">page one</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Page2.html">page two</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./page3.html">page Three</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./page4.html">page Four</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./page5.html">trello</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- end nav -->
+    <form action="">
+      <input type="text" placeholder="enter Task Text" id="textVal" />
+      <button id="button" type="button">ADD</button>
+    </form>
+
+    <section class="container" id="container">
+      <div class="inProgress">
+        <h2 class="h2-style gold">In Progress</h2>
+        <div
+          class="tasksSection"
+          id="inProgress"
+          ondragover="onAll(event)"
+          ondrop="drop(event)"
+        ></div>
+      </div>
+      <div class="onHold" ondragover="onAll(event)" ondrop="drop(event)">
+        <h2 class="h2-style red">On Hold</h2>
+        <div class="tasksSection" id="hold"></div>
+      </div>
+      <div class="review" ondragover="onAll(event)" ondrop="drop(event)">
+        <h2 class="h2-style blue">In Review</h2>
+        <div class="tasksSection" id="review"></div>
+      </div>
+      <div class="approved" ondragover="onAll(event)" ondrop="drop(event)">
+        <h2 class="h2-style green">Approved</h2>
+        <div class="tasksSection" id="Approved"></div>
+      </div>
+    </section>
+
+    <div id="map"></div>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script>
+  </body>
+</html>

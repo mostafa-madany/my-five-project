@@ -1,0 +1,10 @@
+
+.parent  {
+    .child {
+        margin: 10px 0px;
+    }
+    :not(:last-child) {
+        background-color: red;
+    }
+
+}
